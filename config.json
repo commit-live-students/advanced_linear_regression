@@ -1,0 +1,1 @@
+{ "notebook": { "folder": "advanced_linear_regression" , "q01_load_data": "q01_load_data.ipynb", "q02_Max_important_feature": "q02_Max_important_feature.ipynb", "q03_polynomial": "q03_polynomial.ipynb", "q04_ridge": "q04_ridge.ipynb","q05_lasso":"q05_lasso.ipynb","q06_cross_validation":"q06_cross_validation.ipynb"} }
