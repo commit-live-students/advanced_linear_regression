@@ -12,7 +12,6 @@ concept.
 ##  Write a function `cross_validation` that :
 - Calculates the mean error scores for different cross validation folds.
 - Should fit the model on X_train and y_train.
-- Gives out the output for new array passed consists of 4,5,6,7. 
 
 #### Parameters:
 
