@@ -11,6 +11,7 @@ With that being said let's implement what we have learned ..
 - Should be able to load the data with the help of function `load_data`.
 - Should be able to extract 'OverallQual','GrLivArea','GarageCars','GarageArea' features
   and fit model on these features.
+- Gives out the output for new array passed consists of 4,5,6,7.  
  
 Doing this assignment will help you learn how to create polynomial basis function and fit it onto linear model.
 You can also toy with the parameters and observe the effect on your linear model.
