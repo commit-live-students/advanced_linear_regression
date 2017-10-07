@@ -10,8 +10,7 @@ With that being said let's implement what we have learned ..
 - All the process should be done with random state set as 9 and power parameter should be set as 5.
 - Should be able to load the data with the help of function `load_data`.
 - Should be able to extract 'OverallQual','GrLivArea','GarageCars','GarageArea' features
-  and fit model on these features.
-- Gives out the output for new array passed consists of 4,5,6,7.  
+  and fit model on these features.  
  
 Doing this assignment will help you learn how to create polynomial basis function and fit it onto linear model.
 You can also toy with the parameters and observe the effect on your linear model.
@@ -21,8 +20,8 @@ You can also toy with the parameters and observe the effect on your linear model
 
 | Parameter | dtype | argument type | default value | description |
 | :---: | :---: | :---: | :---: | :---: |
-| power | Numeric Number | optional | 5 | power |
-| Random state | Numeric Number | optional | 9 | random state |
+| power | Numeric Number | compulsory | 5 | power |
+| Random state | Numeric Number | compulsory | 9 | random state |
 
 ### Returns:
 
