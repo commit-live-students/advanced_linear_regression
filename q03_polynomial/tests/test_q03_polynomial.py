@@ -1,17 +1,17 @@
-import sys, os
-
 import numpy as np
-
-sys.path.append(os.path.join(os.path.dirname(os.curdir)))
-
 from unittest import TestCase
-
-from q03_polynomial.build import polynomial
+from ..build import polynomial
+from inspect import getargspec
 
 
 class TestPolynomial(TestCase):
     def test_polynomial(self):
+        # Input parameters tests
+        args = getargspec(polynomial)
+        self.assertEqual(len(args[0]), 2, "Expected argument(s) %d, Given %d" % (2, len(args[0])))
+        self.assertEqual(args[3], (5, 9), "Expected default values do not match given default values")
+
+        # Return value tests
         model = polynomial()
         prediction = model.predict(np.array([4, 5, 6, 7]).reshape(1, -1))
         self.assertTrue(prediction, np.array([-50871.05760668]))
-        
