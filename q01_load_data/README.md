@@ -10,13 +10,15 @@ Why not do it in single step.
 - Split the data into train and test data set.
 - Set the split ratio as 33 percent.
 
+
+
 ### Parameters:
 
 | Parameter | dtype | argument type | default value | description |
 | --- | --- | --- | --- | --- | 
 | path | string | compulsory |  | path to the file csv |
-| test_size | float | optional | | test split |
-| Random state | Integer | compulsory | | Random state |
+| test_size | float | optional | | train test split ratio |
+| Random state | Integer | compulsory | 9| Random state |
 
 ### Returns:
 

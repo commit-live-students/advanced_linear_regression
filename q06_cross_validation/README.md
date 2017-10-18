@@ -14,6 +14,9 @@ concept.
 - Should fit the model on X_train and y_train.
 - Gives out the output for fold value passed as 5.
 
+Hint : Scoring type would be `neg_mean_squared_errors` which would be imported from sklearn.model_selection
+library under the name of cross_val_score
+
 #### Parameters:
 
 | Parameter | dtype | argument type | default value | description |

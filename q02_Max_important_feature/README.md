@@ -10,13 +10,14 @@ Correlation is bit of problem for linear regression model so here ,we will deal 
  
 Doing this assignment will help you in obtaining a grasp on what is correlation and how to deal with it.
 
+Hint: For measuring the correlation you can use corr() function.
 
 ### Parameters:
 
 | Parameter | dtype | argument type | default value | description |
 | --- | --- | --- | --- | --- | 
 | data_set | dataframe | compulsory |  | dataframe loaded from load_data() function |
-| target_varilable | float | compulsory | | Correlation with the target variable |
+| target_variable | string | compulsory | | Correlation with the target variable `(SalePrice)` |
 | n | int | optional | 4 | no. of correlated output |
 
 ### Returns:
@@ -25,6 +26,6 @@ Doing this assignment will help you in obtaining a grasp on what is correlation 
 | --- | --- | --- | 
 | Correlation | float | Correlation between variable |
 
-Hint: For this function you can use corr() function.
+
 
 Let's get started!

@@ -1,6 +1,6 @@
 ## Create a Lasso regressor model and measure the accuracy of your linear model.
 
-Your job is to improvise L2 (Ridge)  Regularization on linear model created previously. 
+Your job is to improvise L1 (lasso)  Regularization on linear model created previously. 
 
 
 This assignment will help you how to create and apply Lasso regressor method of 
@@ -18,7 +18,7 @@ Note : The random seed and as well as random state should be set as 9.
 
 | Parameter | dtype | argument type | default value | description |
 | :---: | :---: | :---: | :---: | :---: |
-| alpha | Numeric Number | compulsory | 1 | learning_rate |
+| alpha | Numeric Number | optional | 0.01 | learning_rate |
 
 #### Returns:
 
