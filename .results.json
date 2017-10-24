@@ -1,0 +1,1 @@
+{"stats": {"passes": 1, "skipped": 0, "encoding": "UTF-8", "errors": 0, "failures": 0, "total": 1}, "results": [{"classname": "advanced_linear_regression.q01_load_data.tests.test_q01_load_data:TestLoad_data", "type": "success", "name": "test_load_data", "time": 0.013875007629394531}]}
