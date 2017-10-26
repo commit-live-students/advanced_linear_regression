@@ -8,8 +8,6 @@ data_set, X_train, X_test, y_train, y_test = load_data('data/house_prices_multiv
 
 
 # Write your code here
-def Max_important_feature(data_set,target_variable,n=4):
+def Max_important_feature(data_set,target_variable='SalePrice',n=4):
     c=data_set.corr()[target_variable].nlargest(n+1).iloc[1:]
-    return np.array(c.index)
-
-#Max_important_feature(data_set,'SalePrice',4)
+    return c.index.tolist()
