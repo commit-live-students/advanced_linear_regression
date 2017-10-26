@@ -10,8 +10,8 @@ np.random.seed(9)
 data_set, X_train, X_test, y_train, y_test = load_data('data/house_prices_multivariate.csv')
 
 # Write your solution here
-def lasso(a=0.01):
-    model = Lasso(alpha=a, random_state=9)
+def lasso(alpha=0.01):
+    model = Lasso(alpha=alpha, random_state=9, normalize = True)
     model.fit(X_train, y_train)
     y_pred_train = model.predict(X_train)
     rmse_1 = mean_squared_error(y_train, y_pred_train)
