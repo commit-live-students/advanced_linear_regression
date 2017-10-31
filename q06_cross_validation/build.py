@@ -9,4 +9,7 @@ data_set, X_train, X_test, y_train, y_test = load_data('data/house_prices_multiv
 
 # Write your solution here
 
-
+def cross_validation(model,X,y):
+    scores = cross_val_score(model, X, y, scoring="neg_mean_squared_error", cv=5)
+    score = scores.mean()
+    return score
