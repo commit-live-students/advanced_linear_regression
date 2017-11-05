@@ -9,6 +9,17 @@ np.random.seed(9)
 # We have already loaded the data for you
 data_set, X_train, X_test, y_train, y_test = load_data('data/house_prices_multivariate.csv')
 
+def ridge(alpha1=0.01):
+    #np.random.seed(9)
+    model = Ridge(alpha=alpha1,normalize=True,random_state=9)
+    model=model.fit(X_train,y_train)
+    ytrain_pred= model.predict(X_train)
 
-# Write your solution here
 
+    ytest_pred = model.predict(X_test)
+
+
+    a=np.sqrt(mean_squared_error(y_train,ytrain_pred))
+    b=np.sqrt(mean_squared_error(y_test,ytest_pred))
+
+    return a,b
