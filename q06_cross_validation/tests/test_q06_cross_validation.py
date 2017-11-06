@@ -24,4 +24,4 @@ class TestCross_validation(TestCase):
                                   type(finalscore)))
 
         # Return value tests
-        self.assertTrue(value, -1778803314.8522613)
+        self.assertAlmostEqual(value, -1764180038.71, 2, "Expected value does not match given value")
