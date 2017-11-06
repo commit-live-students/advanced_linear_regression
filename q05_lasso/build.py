@@ -11,3 +11,11 @@ data_set, X_train, X_test, y_train, y_test = load_data('data/house_prices_multiv
 
 
 # Write your solution here
+def lasso(alpha=0.01):
+    lasso_model = Lasso(alpha=alpha, normalize=True, random_state=9)
+    lasso_model.fit(X_train, y_train)
+    y_pred_train = lasso_model.predict(X_train)
+    y_pred_test = lasso_model.predict(X_test)
+    mse_train = mean_squared_error(y_train, y_pred_train)
+    mse_test = mean_squared_error(y_test, y_pred_test)
+    return np.sqrt(mse_train), np.sqrt(mse_test)
