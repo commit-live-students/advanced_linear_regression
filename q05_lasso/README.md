@@ -11,16 +11,16 @@ often times.
 - Should return a model with implementation of L1 (Lasso)  Regularization.
 - Should be able to fit model on X_train, y_train.
 
-Note : The random seed and as well as random state should be set as 9. 
+Note :-
+- While using the Lasso function imported from the library `sklearn.linear_model` set the default value of normalize as True and also the random state should be set as 9.
 
-#### Parameters:
-
+### Parameters:
 
 | Parameter | dtype | argument type | default value | description |
 | :---: | :---: | :---: | :---: | :---: |
 | alpha | Numeric Number | optional | 0.01 | learning_rate |
 
-#### Returns:
+### Returns:
 
 | Return | dtype | description |
 | --- | --- | --- | 
