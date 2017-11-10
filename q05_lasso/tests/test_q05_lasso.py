@@ -1,7 +1,7 @@
 import numpy as np
 from ..build import lasso
 from unittest import TestCase
-from inspect import getargspec
+from inspect import getfullargspec
 
 
 class TestLasso(TestCase):
@@ -9,9 +9,10 @@ class TestLasso(TestCase):
         np.random.seed(9)
 
         # Input parameters tests
-        args = getargspec(lasso)
-        self.assertEqual(len(args[0]), 1, "Expected argument(s) %d, Given %d" % (1, len(args[0])))
-        self.assertEqual(args[3], (0.01,), "Expected default values do not match given default values")
+        args = getfullargspec(lasso).args
+        args_default = getfullargspec(lasso).defaults
+        self.assertEqual(len(args), 1, "Expected argument(s) %d, Given %d" % (1, len(args)))
+        self.assertEqual(args_default, (0.01,), "Expected default values do not match given default values")
 
         # Return type tests
         rmse1, rmse2 = lasso(0.01)
