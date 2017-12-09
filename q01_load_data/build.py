@@ -10,4 +10,4 @@ def load_data(path, test_size=0.33, random_state=9):
     X = df.iloc[:, :-1]
     y = df.iloc[:, -1]
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=random_state)
-    return null
+    return df, X_train, X_test, y_train, y_test
