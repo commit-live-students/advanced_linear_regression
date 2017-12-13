@@ -7,21 +7,25 @@ from inspect import getargspec
 
 #  data loading
 data_set, X_train, X_test, y_train, y_test = load_data('data/house_prices_multivariate.csv')
-
+np.random.seed(9)
 
 class TestCross_validation(TestCase):
-    def test_cross_validation(self):
-        np.random.seed(9)
+    def test_cross_validation(self):   # Test arguments
         args = getargspec(cross_validation)
         self.assertEqual(len(args[0]), 3, "Expected argument(s) %d, Given %d" % (3, len(args)))
+
+    def test_cross_validation_default(self):
+        args = getargspec(cross_validation)
         self.assertEqual(args[3], None, "Expected default values do not match given default values")
 
-        # Return type tests
+    def test_cross_validation_result_type(self):# Return type tests
         value = cross_validation(Ridge(alpha=0.1), X_train, y_train)
         finalscore = value.mean()
         self.assertIsInstance(finalscore, float,
                               "Expected data type for return value is `float`, you are returning %s" % (
                                   type(finalscore)))
 
-        # Return value tests
+
+    def test_cross_validation_result_values(self):#  Return type value
+        value = cross_validation(Ridge(alpha=0.1), X_train, y_train)
         self.assertAlmostEqual(value, -1764180038.71, 2, "Expected value does not match given value")

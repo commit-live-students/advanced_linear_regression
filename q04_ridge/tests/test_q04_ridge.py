@@ -7,22 +7,24 @@ np.random.seed(9)
 
 
 class TestRidge(TestCase):
-    def test_ridge(self):
+  def test_ridge(self):  # Input parameters tests
+    args = getargspec(ridge)
+    self.assertEqual(len(args[0]), 1, "Expected argument(s) %d, Given %d" % (1, len(args)))
 
-        # Input parameters tests
-        args = getargspec(ridge)
-        self.assertEqual(len(args[0]), 1, "Expected argument(s) %d, Given %d" % (1, len(args)))
-        self.assertEqual(args[3], (0.01,), "Expected default values do not match given default values")
+  def test_ridge_default(self):
+    args = getargspec(ridge)
+    self.assertEqual(args[3], (0.01,), "Expected default values do not match given default values")
 
-        # Return type tests
-        rmse1, rmse2 = ridge(0.01)
-        self.assertIsInstance(rmse1, float,
+  def test_ridge_result_type(self):    # Return type tests
+    rmse1, rmse2 = ridge(0.01)
+    self.assertIsInstance(rmse1, float,
                               "Expected data type for return value is `float`, you are returning %s" % (
                                   type(rmse1)))
-        self.assertIsInstance(rmse2, float,
+    self.assertIsInstance(rmse2, float,
                               "Expected data type for return value is `float`, you are returning %s" % (
                                   type(rmse2)))
 
-        # Return value tests
-        self.assertAlmostEqual(rmse1, 33775.6544815, places=3)
-        self.assertAlmostEqual(rmse2, 37702.0033295, places=3)
+  def test_ridge_result_values(self):      # Return value tests
+    rmse1, rmse2 = ridge(0.01)
+    self.assertAlmostEqual(rmse1, 33775.6544815, places=3)
+    self.assertAlmostEqual(rmse2, 37702.0033295, places=3)
