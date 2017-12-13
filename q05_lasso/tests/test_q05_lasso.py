@@ -26,3 +26,4 @@ class TestLasso(TestCase):
     rmse1, rmse2 = lasso(0.01)
     self.assertAlmostEqual(rmse1, 33769.142311968972, places=3)
     self.assertAlmostEqual(rmse2, 37838.644447277395, places=3)
+

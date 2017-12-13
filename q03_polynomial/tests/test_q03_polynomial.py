@@ -16,4 +16,5 @@ class TestPolynomial(TestCase):
     def test_polynomial_result_values(self):  # Return value tests
         model = polynomial()
         prediction = model.predict(np.array([4, 5, 6, 7]).reshape(1, -1))
-        self.assertEqual(np.round_(prediction,2), np.array([np.round_(34375.28,2)]))
+        self.assertEqual(np.round_(prediction,2), np.array([np.round_(32740.9,2)]))
+
