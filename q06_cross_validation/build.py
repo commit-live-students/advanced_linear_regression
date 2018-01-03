@@ -8,6 +8,6 @@ np.random.seed(9)
 data_set, X_train, X_test, y_train, y_test = load_data('data/house_prices_multivariate.csv')
 
 # Write your solution here
-
-
-
+def cross_validation(model, X, y):
+    cv_results = cross_val_score(model, X=X_train,y=y_train, cv=5, scoring='neg_mean_squared_error')
+    return cv_results.mean()
