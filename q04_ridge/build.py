@@ -11,5 +11,11 @@ data_set, X_train, X_test, y_train, y_test = load_data('data/house_prices_multiv
 
 
 # Write your solution here
-
-
+def ridge(learn_rate=0.01):
+    clf = Ridge(alpha=learn_rate, normalize=True, random_state=9)
+    clf.fit(X_train,y_train)
+    y_pred_train = clf.predict(X_train)
+    y_pred_test  = clf.predict(X_test)
+    rmse_train   = mean_squared_error(y_train, y_pred_train)
+    rmse_test    = mean_squared_error(y_test, y_pred_test)
+    return np.sqrt(rmse_train), np.sqrt(rmse_test)
