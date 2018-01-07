@@ -15,6 +15,6 @@ def load_data(path, test_size=0.33, random_state=9):
     y = data['SalePrice'] # dep
 
     # use the train test split method and create the datasets
-    df,X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=random_state, test_size=test_size)
-    return df, X_train, X_test, y_train, y_test
-    
+    X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=random_state, test_size=test_size)
+    df=type(X_train)
+    return df,X_train, X_test, y_train, y_test
