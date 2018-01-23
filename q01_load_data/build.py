@@ -5,16 +5,13 @@ from sklearn.model_selection import train_test_split
 
 
 # Write your solution here
+def load_data(path, test_size=0.33, random_state=9):
+    df = pd.read_csv(path)
+    X = df.iloc[:, :-1]
+    y = df.iloc[:, -1]
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=random_state)
+    return df, X_train, X_test, y_train, y_test
 
 
-# Default imports
-from greyatomlib.advanced_linear_regression.q01_load_data.build import load_data
 
-data_set, X_train, X_test, y_train, y_test = load_data('data/house_prices_multivariate.csv')
-
-
-# Write your code here
-def Max_important_feature(data_set, target_variable='SalePrice', n=4):
-    cor = data_set.corr()[target_variable]
-    return cor.sort_values(ascending=False)[1:n + 1].index.values
 
