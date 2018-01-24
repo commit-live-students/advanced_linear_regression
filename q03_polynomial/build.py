@@ -16,8 +16,8 @@ def Max_important_feature (data_set,target_variable = 'SalePrice',n=4):
     return list(  abs(corr).sort_values(ascending= False)[:n].index)
 
 def polynomial  (power= 5,random_state = 9):
-    #features = list(Max_important_feature(data_set))
-    features =['OverallQual','GrLivArea','GarageCars','GarageArea']
+    features = list(Max_important_feature(data_set))
+    #features =['OverallQual','GrLivArea','GarageCars','GarageArea']
     poly_model = make_pipeline(PolynomialFeatures(power, include_bias=False),
                            LinearRegression())
     poly_model.fit(X_train[features],y_train )
