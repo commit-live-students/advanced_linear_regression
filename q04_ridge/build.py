@@ -11,5 +11,15 @@ data_set, X_train, X_test, y_train, y_test = load_data('data/house_prices_multiv
 
 
 # Write your solution here
+from math import sqrt
 
+def ridge(alpha=0.01):
+    model = Ridge(alpha, normalize = True, random_state= 9)
+    model.fit(X_train,y_train)
+    rmse_train = sqrt( mean_squared_error(y_train,  model.predict(X_train)))
+    rmse_test = sqrt( mean_squared_error(y_test,  model.predict(X_test)))
+    return (rmse_train,rmse_test)
 
+#rmse_train,rmse_test=ridge ()
+#print rmse_train
+#print rmse_test
