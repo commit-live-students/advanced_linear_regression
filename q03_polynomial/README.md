@@ -29,3 +29,4 @@ You can also toy with the parameters and observe the effect on your linear model
 | --- | --- | --- | 
 | Model |  | Model for polynomial linear regression |
 
+Note - Use `include_bias=False` while defining polynomial features.
