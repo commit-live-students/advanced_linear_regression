@@ -13,5 +13,5 @@ def load_data(path, size = 0.33, rand_state = 9):
                                                      random_state = rand_state,
                                                      train_size = (1 - size))
     return df, X_train, X_test, y_train, y_test
-    
+
 # Write your solution here
