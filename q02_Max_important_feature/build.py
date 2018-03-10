@@ -8,8 +8,6 @@ data_set, X_train, X_test, y_train, y_test = load_data('data/house_prices_multiv
 
 # Write your code here
 def Max_important_feature(data_set,target_variable='SalePrice',n=4):
-    a1,a2,a3,a4 =(data_set.corr()['SalePrice']).sort_values()[-5:-1].values
-
-    return a1,a2,a3,a4
 
 
+    return (data_set.corr()['SalePrice']).sort_values(ascending = False).index.values[1:5]
