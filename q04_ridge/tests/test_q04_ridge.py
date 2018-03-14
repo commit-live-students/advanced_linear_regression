@@ -1,18 +1,18 @@
 import numpy as np
 from unittest import TestCase
 from ..build import ridge
-from inspect import getargspec
+from inspect import getfullargspec
 
 np.random.seed(9)
 
 
 class TestRidge(TestCase):
   def test_ridge(self):  # Input parameters tests
-    args = getargspec(ridge)
+    args = getfullargspec(ridge)
     self.assertEqual(len(args[0]), 1, "Expected argument(s) %d, Given %d" % (1, len(args)))
 
   def test_ridge_default(self):
-    args = getargspec(ridge)
+    args = getfullargspec(ridge)
     self.assertEqual(args[3], (0.01,), "Expected default values do not match given default values")
 
   def test_ridge_rmse1_type(self):    # Return type tests
