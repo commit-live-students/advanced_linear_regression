@@ -17,5 +17,4 @@ def ridge(alpha = 0.01):
     y_pred_test = model.predict(X_test)
     rms_train = sqrt(mean_squared_error(y_train, y_pred_train))
     rms_test = sqrt(mean_squared_error(y_test, y_pred_test))
-    return model, rms_train,rms_test
-    
+    return rms_train,rms_test
