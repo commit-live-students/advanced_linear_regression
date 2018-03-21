@@ -14,4 +14,3 @@ def polynomial(power = 5,random_state = 9):
     poly_model=PolynomialFeatures(X_train,y_train)
     poly_model=make_pipeline(PolynomialFeatures(power,include_bias=False),LinearRegression())
     return poly_model.fit(X_train,y_train)
-print(polynomial(power = 5,random_state = 9))
