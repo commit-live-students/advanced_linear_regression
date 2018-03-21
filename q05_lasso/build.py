@@ -15,11 +15,7 @@ def lasso(alpha = 0.01):
     model = Lmodel.fit(X_train, y_train)
     y_predict = Lmodel.predict(X_train)
     y_predict1 = Lmodel.predict(X_test)
-    mse_train= mean_squared_error(y_train,y_predict)
-    mse_test = mean_squared_error(y_test,y_predict1)
-    rmse_train,rmse_test = np.sqrt(mse_train),np.sqrt(mse_test)
-
-    #rmse_train = np.sqrt(mean_squared_error(y_train,y_predict))
-    #rmse_test = np.sqrt(mean_squared_error(y_test,y_predict1))
-    return rmse_train,rmse_test,model
+    rmse_train = np.sqrt(mean_squared_error(y_train,y_predict))
+    rmse_test = np.sqrt(mean_squared_error(y_test,y_predict1))
+    return rmse_train,rmse_test
 print(lasso(alpha = 0.01))
