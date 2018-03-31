@@ -9,3 +9,7 @@ data_set, X_train, X_test, y_train, y_test = load_data('data/house_prices_multiv
 
 
 # Write your solution here
+def polynomial(power=5, Random_State=9):
+    model = make_pipeline(PolynomialFeatures(degree=power, include_bias=False),LinearRegression())
+    model.fit(X_train[[ 'OverallQual','GrLivArea','GarageCars','GarageArea' ]], y_train)
+    return model
