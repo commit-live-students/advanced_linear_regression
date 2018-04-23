@@ -26,4 +26,4 @@ Note :-
 | --- | --- | --- | 
 | RMSE for train | float | Rmse for Lasso regressor |
 | RMSE for test | float | Rmse for Lasso regressor |
-| Model |  | Model for Ridge linear regression |
+| Model |  | Model for Lasso linear regression |
