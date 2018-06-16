@@ -11,3 +11,4 @@ def Max_important_feature(data_set,target_variable='SalePrice',n=4):
     cols=data_set.corr().nlargest(n+1,target_variable)[target_variable].index[1:n+1]
     return cols
 
+
