@@ -30,7 +30,7 @@ Now, we will try to implement the Rigde and lasso on the __house_prices_multivar
 
 - Learn to Write Sklearn Algorithm for Ridge and Lasso using Cross Validation
 - When to apply Regularization technique, how it works and prevent under or over fitting
-- How it helps to balance the bais and variance trade-off.
+- How it helps to balance the bias and variance trade-off.
 * Benchmark the performances of linear regression against that of Regularization.
 * Learn to use cross validation.
 
