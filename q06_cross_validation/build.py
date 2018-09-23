@@ -16,7 +16,7 @@ from sklearn.linear_model import Ridge
 def cross_validation(model,X,y):
     model=Ridge(alpha=0.1)
     scores=cross_val_score(model,X_train,y_train,scoring='neg_mean_squared_error',cv=5)
-    return scores.mean()
+    return float('%.2f'%scores.mean()
    
 c=cross_validation(data_set,X_train,y_train)
 c
