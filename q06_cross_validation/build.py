@@ -10,11 +10,10 @@ data_set, X_train, X_test, y_train, y_test = load_data('data/house_prices_multiv
 np.random.seed(9)
 
 
+Model = Ridge(alpha=0.1)
 # Write your solution here
-R_model = Ridge(alpha= 0.1)
-model = R_model.fit(X_train, y_train)
-def cross_validation(model,X_train, y_train):
-    scores = cross_val_score(model,X_train,y_train, scoring='neg_mean_squared_error', cv=5)
-    return scores.mean()
-cross_validation(model,X_train,y_train)
+def cross_validation(Model, X_train , y_train):
+    scores = (cross_val_score(Model, X_train, y_train, scoring = 'neg_mean_squared_error',cv=5)).mean()
+    return scores
+cross_validation(Model,X_train,y_train)
 
