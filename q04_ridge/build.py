@@ -15,12 +15,15 @@ np.random.seed(9)
 # Write your solution here
 
 def ridge(alpha = 0.01):
-    r_model = Ridge(alpha, normalize = True,random_state = 9)
-    r_model.fit(X_train, y_train)
-    y_predict = r_model.predict(X_train)
-    y_predict1 = r_model.predict(X_test)
-    rmse2 = np.sqrt(mean_squared_error(y_test,y_predict1))
-    rmse1 = np.sqrt(mean_squared_error(y_train,y_predict))
-    return float('{0:.7f}'.format(rmse1)),float('{0:.7f}'.format(rmse2))
+
+    rmodel = Ridge(alpha, normalize = True,random_state = 9)
+    rmodel.fit(X_train, y_train)
+    y_predict = rmodel.predict(X_train)
+    y_predict1 = rmodel.predict(X_test)
+    rmse_train = np.sqrt(mean_squared_error(y_train,y_predict))
+    rmse_test = np.sqrt(mean_squared_error(y_test,y_predict1))
+    return rmse_train,rmse_test
 print(ridge(alpha = 0.01))
+
+
 
