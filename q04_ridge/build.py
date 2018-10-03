@@ -1,4 +1,3 @@
-# %load q04_ridge/build.py
 # Default imports
 from sklearn.linear_model import Ridge
 import pandas as pd
@@ -16,14 +15,18 @@ np.random.seed(9)
 
 def ridge(alpha = 0.01):
 
-    rmodel = Ridge(alpha, normalize = True,random_state = 9)
+    rmodel = Ridge(alpha = alpha, normalize = True,random_state = 9)
     rmodel.fit(X_train, y_train)
     y_predict = rmodel.predict(X_train)
     y_predict1 = rmodel.predict(X_test)
     rmse_train = np.sqrt(mean_squared_error(y_train,y_predict))
     rmse_test = np.sqrt(mean_squared_error(y_test,y_predict1))
-    return rmse_train,rmse_test
+    return rmse_train,rmse_test, rmodel
+
 print(ridge(alpha = 0.01))
 
+
+
+print(ridge(alpha = 0.01))
 
 
