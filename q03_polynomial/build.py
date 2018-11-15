@@ -14,12 +14,9 @@ def polynomial(power=5,random_state=9):
     cols=data_set.corr().drop('SalePrice').nlargest(4,'SalePrice')['SalePrice'].index.tolist()
     
     
-    Model = make_pipeline(PolynomialFeatures(power,include_bias=False),LinearRegression())
+    Model = make_pipeline(PolynomialFeatures(power,include_bias=False),LinearRegression(random_state))
     
     Model.fit(X_train[cols], y_train)
     return Model
-cols=data_set.corr().drop('SalePrice').nlargest(4,'SalePrice')['SalePrice'].index.tolist()
-cols
-X_train[cols]
 
 
