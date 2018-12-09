@@ -14,9 +14,11 @@ X_test = X_test[['OverallQual','GrLivArea','GarageCars','GarageArea']]
 # Write your solution here
 def polynomial(power=5,Random_state=9):
     # PolynomialFeatures (prepreprocessing)
-    poly_model = make_pipeline(PolynomialFeatures(power),
+    poly_model = make_pipeline(PolynomialFeatures(power,include_bias=False),
                            LinearRegression())
     poly_model.fit(X_train,y_train)
     return poly_model
+
+polynomial(power=5,Random_state=9)
 
 
