@@ -1,3 +1,4 @@
+# %load q03_polynomial/build.py
 # Default imports
 from greyatomlib.advanced_linear_regression.q01_load_data.build import load_data
 from sklearn.preprocessing import PolynomialFeatures
@@ -9,3 +10,16 @@ data_set, X_train, X_test, y_train, y_test = load_data('data/house_prices_multiv
 
 
 # Write your solution here
+
+def polynomial(power = 5,random_state = 9):
+    #lin = LinearRegression(random_state = random_state)
+    X = data_set.iloc[:, :-1]
+    y = data_set.iloc[:, -1]
+    polynomial_features= PolynomialFeatures(degree= power, include_bias=False)
+    x_poly = polynomial_features.fit_transform(X)
+    model = LinearRegression()
+    model.fit(x_poly, y)
+    y_poly_pred = model.predict(x_poly)
+    return y_poly_pred
+polynomial(5,9)
+
