@@ -1,15 +1,13 @@
 # Default imports
-from sklearn.linear_model import Ridge
 import pandas as pd
-import numpy as np
-from sklearn.metrics import mean_squared_error
-from greyatomlib.advanced_linear_regression.q01_load_data.build import load_data
-np.random.seed(9)
-
-# We have already loaded the data for you
-data_set, X_train, X_test, y_train, y_test = load_data('data/house_prices_multivariate.csv')
+from sklearn.model_selection import train_test_split
 
 
 # Write your solution here
 
-
+def load_data(path, test_size=0.33, random_state=9):
+    df = pd.read_csv(path)
+    X = df.iloc[:, :-1]
+    y = df.iloc[:, -1]
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=random_state)
+    return df, X_train, X_test, y_train, y_test
