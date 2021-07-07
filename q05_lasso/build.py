@@ -1,3 +1,12 @@
+from math import sqrt
+def ridge(alpha=0.01):
+    model = Ridge(alpha, normalize=True, random_state=9)
+    model.fit(X_train,y_train)
+    y_pred_test= model.predict(X_test)
+    y_pred_train= model.predict(X_train)
+    rmse_train = sqrt(mean_squared_error(y_train,y_pred_train))
+    rmse_test = sqrt(mean_squared_error(y_test,y_pred_test))
+    return rmse_train,rmse_test
 # Default imports
 from sklearn.linear_model import Lasso
 import pandas as pd
@@ -11,4 +20,12 @@ data_set, X_train, X_test, y_train, y_test = load_data('data/house_prices_multiv
 
 
 # Write your solution here
-
+from math import sqrt
+def lasso(alpha=0.01):
+    model = Lasso(alpha, normalize=True, random_state=9)
+    model.fit(X_train,y_train)
+    y_pred_test= model.predict(X_test)
+    y_pred_train= model.predict(X_train)
+    rmse_train = sqrt(mean_squared_error(y_train,y_pred_train))
+    rmse_test = sqrt(mean_squared_error(y_test,y_pred_test))
+    return rmse_train,rmse_test
